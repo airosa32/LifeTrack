@@ -31,10 +31,14 @@ O projeto segue uma separação clara de responsabilidades, pensando em manter a
 
 ```
 lib/
-├── core/          # constantes, tema, rotas
-├── models/        # entidades (Transaction, Task, Category, FinancialAlert...)
-├── services/       # regras de negócio puras (FinanceService, AlertService...)
-└── providers/      # gerenciamento de estado com Riverpod
+├── core/            # constantes, tema, rotas
+├── models/          # entidades (Transaction, Task, Category, FinancialAlert...)
+├── providers/       # gerenciamento de estado com Riverpod
+├── repositories/    # acesso e persistência dos dados
+├── screens/         # telas do app
+├── services/        # regras de negócio puras (FinanceService, AlertService...)
+├── widgets/         # componentes de UI reutilizáveis
+└── main.dart        # ponto de entrada do app
 ```
 
 Os `services` não dependem de Riverpod nem de widgets — recebem os dados já carregados e devolvem resultados prontos para exibição, o que facilita testes unitários e evolução do código.
